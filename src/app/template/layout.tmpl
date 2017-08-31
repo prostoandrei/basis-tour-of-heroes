@@ -1,6 +1,9 @@
-<b:style src="./layout.css"/>
-<b:isolate/>
-
 <div>
-  <h1>Congrat, your app is working!</h1>
+	<h1>{title}</h1>
+	<h2>{name} details!</h2>
+	<div><label>Id: </label>{id}</div>
+	<div>
+		<label>Name: </label>
+		<input value="{name}" event-input="setName" placeholder="Enter name">
+	</div>
 </div>
