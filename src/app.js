@@ -3,7 +3,7 @@ var Node = require('basis.ui').Node;
 module.exports = require('basis.app').create({
   title: 'Basisjs tour of heroes',
 
-  init: function(){
+  init: function() {
     return new Node({
 			template: resource('./app/template/layout.tmpl'),
 			data: {
@@ -16,16 +16,16 @@ module.exports = require('basis.app').create({
 			binding: {
 				id: 'data:hero.id',
 				name: 'data:hero.name',
-				title: 'data:title'
+				title: 'data:'
 			},
 			action: {
-				setName: function(e) {
+				setHeroName: function(e) {
 					this.update({
 						hero: {
-							id: this.data.hero.id + 1,
+							id: this.data.hero.id,
 							name: e.sender.value
 						}
-					})
+					});
 				}
 			}
     });
