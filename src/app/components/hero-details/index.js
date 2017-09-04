@@ -1,7 +1,7 @@
 var Node = require('basis.ui').Node;
 
-var HeroDetailsNode = new Node({
-	template: resource('./app/template/layout.tmpl'),
+module.exports = new Node({
+	template: resource('./templpates/hero-details.tmpl'),
 	data: {
 		id: 1,
 		title: 'Superhero'
@@ -21,5 +21,3 @@ var HeroDetailsNode = new Node({
 		}
 	}
 });
-
-module.exports = HeroDetailsNode;
