@@ -1,3 +1,3 @@
 module.exports = {
-	Hero: require('./type/hero.js'),
+    Hero: require('./type/hero.js'),
 };
