@@ -6,7 +6,7 @@ module.exports = Node.subclass({
             '<span class="badge">{id}</span> {title}' +
         '</li>',
     binding: {
-        id: 'data:',
-        title: 'data:',
+        id: 'id',
+        title: 'title',
     }
 });
