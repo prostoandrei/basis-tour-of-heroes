@@ -1,18 +1,33 @@
 var Node = require('basis.ui').Node;
 
 module.exports = require('basis.app').create({
-    title: 'Basis tour of heroes',
-    init: function () {
-        return new Node({
-            template: resource('./app/template/layout.tmpl'),
-            binding: {
-                list: 'satellite:list',
-                details: 'satellite:details',
-            },
-            satellite: {
-                list: require('./app/components/hero-list/index'),
-                details: require('./app/components/hero-details/index')
-            },
-        });
+  title: 'Basisjs tour of heroes',
+
+  init: function() {
+    return new Node({
+	  template: resource('./app/template/layout.tmpl'),
+	  data: {
+		title: 'Basis tour of heroes',
+		hero: {
+			id: 1,
+			name: 'Superhero'
+		}
+	  },
+	  binding: {
+	  	id: 'data:hero.id',
+	  	name: 'data:hero.name',
+	  	title: 'data:'
+      },
+      action: {
+        setHeroName: function(e) {
+          this.update({
+            hero: {
+              id: this.data.hero.id,
+              name: e.sender.value
+            }
+          });
+      }
     }
+    });
+  }
 });
