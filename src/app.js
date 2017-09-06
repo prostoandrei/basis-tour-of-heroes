@@ -2,6 +2,13 @@ var Node = require('basis.ui').Node;
 var List = require('./app/components/hero-list/index');
 var Details = require('./app/components/hero-details/index');
 
+List.selection.addHandler({
+    itemsChanged: function(sender){
+        Details.setDelegate(sender.pick());
+        // Details.focus();
+    }
+});
+
 module.exports = require('basis.app').create({
     title: 'Basis tour of heroes',
     init: function () {
@@ -10,7 +17,7 @@ module.exports = require('basis.app').create({
             binding: {
                 list: List,
                 details: Details
-            },
+            }
         });
     }
 });
