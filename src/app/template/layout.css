@@ -1,11 +1,17 @@
 HTML,
 BODY
 {
-  height: 100%;
-  padding: 0;
-  margin: 0;
+    height: 100%;
+    padding: 0;
+    margin: 0;
 
-  background: white;
-  color: black;
+    background: white;
+    color: black;
 }
 
+.heroes {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: 15em;
+}

@@ -1,4 +1,6 @@
 var Node = require('basis.ui').Node;
+var List = require('./app/components/hero-list/index');
+var Details = require('./app/components/hero-details/index');
 
 module.exports = require('basis.app').create({
     title: 'Basis tour of heroes',
@@ -6,12 +8,8 @@ module.exports = require('basis.app').create({
         return new Node({
             template: resource('./app/template/layout.tmpl'),
             binding: {
-                list: 'satellite:list',
-                details: 'satellite:details',
-            },
-            satellite: {
-                list: require('./app/components/hero-list/index'),
-                details: require('./app/components/hero-details/index')
+                list: List,
+                details: Details
             },
         });
     }

@@ -1,9 +1,9 @@
 var Node = require('basis.ui').Node;
-var HeroNode = require('../hero/hero');
+var Hero = require('../hero/hero');
 
 module.exports = new Node({
     template: resource('./templates/hero-list.tmpl'),
-    childClass: HeroNode,
+    childClass: Hero,
     childNodes: [
         { id: 1, title: 'Headcrab' },
         { id: 2, title: 'Magnetto' },
