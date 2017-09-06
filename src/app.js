@@ -1,18 +1,22 @@
 var Node = require('basis.ui').Node;
-var Hero = require('./app/type').Hero;
-var HeroNode = require('./app/components/hero/hero');
-
-for (var i = 1; i <= 8; i++) {
-	Hero({ id: i,	title: 'Title ' + i });
-}
+var Hero = require('./app/components/hero/index');
 
 module.exports = require('basis.app').create({
-	title: 'Basis tour of heroes',
-  init: function() {
-    return new Node({
-			template: resource('./app/template/layout.tmpl'),
-			childClass: HeroNode,
-			dataSource: Hero.all
-    });
-  }
+    title: 'Basis tour of heroes',
+    init: function () {
+        return new Node({
+            template: resource('./app/template/layout.tmpl'),
+            childClass: Hero,
+            childNodes: [
+                { id: 1, title: 'Headcrab' },
+                { id: 2, title: 'Magnetto' },
+                { id: 3, title: 'Cyclop' },
+                { id: 4, title: 'Batman' },
+                { id: 5, title: 'Superman' },
+                { id: 6, title: 'Storm' },
+                { id: 7, title: 'Flash' },
+                { id: 8, title: 'Wolverine' }
+            ]
+        });
+    }
 });
