@@ -3,7 +3,7 @@ var List = require('./app/components/hero-list/index');
 var Details = require('./app/components/hero-details/index');
 
 List.selection.addHandler({
-    itemsChanged: function(sender){
+    itemsChanged: function(sender) {
         Details.setDelegate(sender.pick());
     }
 });
