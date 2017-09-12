@@ -1,12 +1,14 @@
 var Node = require('basis.ui').Node;
-var List = require('./app/components/hero-list/index');
-var Details = require('./app/components/hero-details/index');
+var router = basis.require('basis.router');
 
-List.selection.addHandler({
-    itemsChanged: function(sender) {
-        Details.setDelegate(sender.pick());
-    }
-});
+var pages = require('./app/pages/index');
+
+var page = router
+    .route(':page')
+    .param('page')
+    .as(function(page) {
+        return pages[page] || pages[''];
+    });
 
 module.exports = require('basis.app').create({
     title: 'Basis tour of heroes',
@@ -14,9 +16,10 @@ module.exports = require('basis.app').create({
         return new Node({
             template: resource('./app/template/layout.tmpl'),
             binding: {
-                list: List,
-                details: Details
+                content: page.value
             }
         });
     }
 });
+
+router.start();
