@@ -1,7 +1,7 @@
 var Node = require('basis.ui').Node;
 var router = basis.require('basis.router');
-
 var pages = require('./app/pages/index');
+var Navigation = require('./app/components/navigation/index');
 
 var page = router
     .route(':page')
@@ -16,8 +16,13 @@ module.exports = require('basis.app').create({
         return new Node({
             template: resource('./app/template/layout.tmpl'),
             binding: {
-                content: page.value
-            }
+                navigation: 'satellite:',
+                content: 'satellite:'
+            },
+            satellite: {
+                navigation: Navigation,
+                content: page
+            },
         });
     }
 });
