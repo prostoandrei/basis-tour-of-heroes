@@ -1,10 +1,11 @@
 var Node = require('basis.ui').Node;
 var Hero = require('../hero/index');
-var dataset = require('../../mockData/heroes');
+var Heroes = require('../../type').Hero;
 
 module.exports = new Node({
     template: resource('./templates/hero-list.tmpl'),
+    active: true,
     childClass: Hero,
     selection: true,
-    dataSource: dataset
+    dataSource: Heroes.all
 });

@@ -1,6 +1,13 @@
 var Node = require('basis.ui').Node;
 var DataObject = require('basis.data').Object;
-var dataset = require('../../mockData/heroes');
+var Heroes = require('../../type').Hero;
+
+var Slice = require('basis.data.dataset').Slice;
+
+var top3max = new Slice({
+    source: Heroes.all,
+    limit: 4
+  });
 
 module.exports = new Node({
     template: resource('./templates/dashboard.tmpl'),
@@ -17,5 +24,7 @@ module.exports = new Node({
             title: 'data:',
         },
     },
-    dataSource: dataset
+    dataSource: top3max
 });
+
+console.log('Heroes.all', Heroes.all);
