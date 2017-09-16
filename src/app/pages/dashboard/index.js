@@ -37,6 +37,6 @@ module.exports = new Node({
             title: 'data:',
         },
     },
-    // dataSource: Value.query()
+    active: true,
     dataSource: top
 });
