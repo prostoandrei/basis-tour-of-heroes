@@ -1,0 +1,11 @@
+.search-wrapper {
+  text-align: center;
+  margin: 10px 0;
+}
+
+label {
+  vertical-align: middle;
+}
+input {
+  vertical-align: middle;
+}

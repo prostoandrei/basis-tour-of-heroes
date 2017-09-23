@@ -35,7 +35,7 @@ module.exports = new Node({
     },
     childClass: {
         template: `
-            <a class="col-1-4">
+            <a class="col">
                 <div class="module hero">
                     <h4>{title}</h4>
                 </div>
