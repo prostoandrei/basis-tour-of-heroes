@@ -39,9 +39,9 @@ h4 {
   border-radius: 2px;
 }
 .module:hover {
-  background-color: #EEE;
+  background-color: #c37c5e;
   cursor: pointer;
-  color: #607d8b;
+  color: white;
 }
 .grid-pad {
   /* padding: 10px 0; */
