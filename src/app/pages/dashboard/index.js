@@ -5,13 +5,7 @@ var dataset = require('../../mockData/heroes');
 module.exports = new Node({
     template: resource('./templates/dashboard.tmpl'),
     childClass: {
-        template: `
-        <a class="col">
-            <div class="module hero">
-                <h4>{title}</h4>
-            </div>
-        </a>
-        `,
+        template: resource('./templates/dashboard-item.tmpl'),
         binding: {
             id: 'data:',
             title: 'data:',
