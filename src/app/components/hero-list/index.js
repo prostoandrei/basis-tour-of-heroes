@@ -22,7 +22,7 @@ var filtered = new Filter({
         return item.data.title.toLowerCase().indexOf(searchedHero.value.toLowerCase()) !== -1;
     }
 });
-var top = new Slice({ source: filtered, limit: 10 });
+var top = new Slice({ source: filtered, limit: 10, sorting: 'data.id' });
 
 searchedHero.link(null, function(value) {
     filtered.applyRule();
@@ -36,5 +36,6 @@ module.exports = new Node({
     active: true,
     childClass: Hero,
     selection: true,
+    sorting: 'data.id',
     dataSource: top
 });
